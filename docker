@@ -1,0 +1,33 @@
+# Run docker image
+docker -it tag
+
+# Run docker image in detached state
+docker -i -d tag
+
+# Attach to running docker
+docker exec -it hash /bin/bash
+
+# See active docker instances
+docker ps
+
+# Stop running docker instances
+docker stop conainer id
+
+# Mount directory on host machine.
+docker run -i -d -v /home/oskar/elasticsearch-anomaly-detection/example:/home/docker/example numenta/nupic
+
+# Expose port on existing image
+docker run -i -d --expose=12345 numenta/nab
+
+# Commit changes made to a image
+docker commit docker id tag
+
+# Find ip of container ID
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container ID
+
+# Remove all unused images
+docker system prune
+
+# Remove docker image
+docker image rm id
+
